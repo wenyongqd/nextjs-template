@@ -98,7 +98,7 @@ module.exports = {
           },
         },
       },
-      keyframes: ({ theme }: any) => ({
+      keyframes: ({ theme: }) => ({
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
