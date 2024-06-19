@@ -1,8 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Inter as FontSans } from "next/font/google"
+import localFont from "next/font/local"
 
-const inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css"
+import { cn } from "@/lib/utils";
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+// Font files can be colocated inside of `pages`
+const fontHeading = localFont({
+  src: "../assets/fonts/CalSans-SemiBold.woff2",
+  variable: "--font-heading",
+})
+
+interface RootLayoutProps {
+  children: React.ReactNode
+}
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +32,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
