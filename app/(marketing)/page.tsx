@@ -25,11 +25,11 @@ export default async function IndexPage() {
               everything. Follow along as we figure this out together.
             </p>
             <div className="space-x-4">
-              <Link href="/#" className={cn(buttonVariants({ size: "lg" }), "rounded-full")}>
+              <Link href={""} className={cn(buttonVariants({ size: "lg" }), "rounded-full")}>
                 Get Started
               </Link>
               <Link
-                href={"/#"}
+                href={""}
                 target="_blank"
                 rel="noreferrer"
                 className={cn(buttonVariants({ variant: "outline", size: "lg" }), "rounded-full")}
